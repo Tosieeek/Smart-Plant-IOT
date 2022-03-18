@@ -4,6 +4,7 @@ import communication
 from communication import send_notification
 import time
 import random
+import os
 
 
 cred_obj = firebase_admin.credentials.Certificate('co-flower-firebase-adminsdk-oo196-1e4ae65dc7.json')
@@ -74,6 +75,6 @@ while run:
 
         sent = True
         print("Wysylam powiadomienie " + notifi + ".")
-        communication.send_notification(notifi, "C030DELU4AF")
+        communication.send_notification(notifi, os.getenv('CHID'))
     notifi = ""
     time.sleep(5)

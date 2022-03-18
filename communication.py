@@ -6,7 +6,7 @@ def send_notification(text, channel_id):
 
     if isinstance(text, str):
 
-        client = WebClient(token="xoxp-3013417715795-2998770285223-3006782068934-2bd11ba36c634a9fa5ef4390a6d08ec7")
+        client = WebClient(token=os.getenv('APITOKEN'))
         channel_id = channel_id
         try:
             result = client.chat_postMessage(
